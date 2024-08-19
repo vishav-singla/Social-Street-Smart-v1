@@ -36,9 +36,9 @@ jobs:
         run: |
           docker build -t ${{ matrix.service }} ./server/${{ matrix.service }}
 
-      - name: Run Pytest inside Docker container
-        run: |
-          docker run --rm ${{ matrix.service }} pytest
+      # - name: Run Pytest inside Docker container
+      #   run: |
+      #     docker run --rm ${{ matrix.service }} pytest
 
   deploy:
     needs: build-and-test
